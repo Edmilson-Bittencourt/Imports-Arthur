@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARTHUR IMPORTS - iPhones </title>
+<title>Imports Arthur - iPhones Originais com Garantia</title>
 <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif;scroll-behavior:smooth;}
     body{color:#fff; overflow-x:hidden;}
@@ -19,14 +19,9 @@
         align-items: center;
         gap: 15px;
         letter-spacing: 4px;
-        animation: glowPulse 2s ease-in-out infinite;
         margin-bottom: 25px;
     }
    .apple-icon {width: 50px;height: 50px;fill: #eff7ef;}
-    @keyframes glowPulse {
-        0%, 100% { text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 20px rgba(247, 246, 242, 0.7); }
-        50% { text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgb(243, 243, 240); }
-    }
    .frase-destaque {
         font-size: 1.8rem;
         font-weight: 700;
@@ -41,6 +36,8 @@
    .grid-encomenda{display:grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px 10px;}
     @media(max-width: 600px){.grid-encomenda{grid-template-columns: 1fr;} }
    .aviso-encomenda{background:rgba(255,215,0,0.08);border:1px solid #f7e707;padding:15px;border-radius:12px;margin-bottom:25px;font-weight:600;}
+    /* AVISO SUTIL DE SITE DESATIVADO */
+   .aviso-desativado{background: rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:10px 15px; border-radius:20px; margin:0 auto 30px auto; max-width:500px; font-size:0.9rem; color:#eee; backdrop-filter: blur(5px);}
    .card-produto{background: rgba(0,0,0,0.35);border-radius: 20px;overflow: hidden;box-shadow: 0 8px 25px rgba(0,0,0,0.4);transition: 0.3s;border: 1px solid rgba(255,215,0,0.2);backdrop-filter: blur(10px);text-align: left;}
    .card-produto:hover{transform: translateY(-10px);box-shadow: 0 15px 40px rgba(255,215,0,0.3);border-color: #FFD700;}
    .card-produto img{width: 100%;height: 220px;object-fit: contain;background: rgba(0,0,0,0.3);padding: 15px;display: block;}
@@ -49,17 +46,16 @@
    .card-produto p{color: #ddd; margin-bottom: 15px; font-size: 14px; min-height: 40px;}
    .preco{font-size: 26px;font-weight:bold;margin:10px 0;color:#fff;}
    .sinal{font-size: 16px;color:#ffee00;font-weight:600;margin-bottom:10px;}
-   .btn-comprar{display: inline-block;padding: 12px 20px;background: #ffd900;color: #000;text-decoration: none;border-radius: 25px;font-weight: bold;font-size: 1rem;transition: 0.3s;width: 100%;text-align: center;border: none;cursor: pointer;}
-   .btn-comprar:hover{background: #FFC400; transform: scale(1.05);}
-   .whats{position:fixed;bottom:20px;right:20px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;color:#fff;box-shadow:0 0 25px #25D366;z-index:99;}
+    /* BOTÃO AGORA DESATIVADO - SÓ VISUAL */
+   .btn-comprar{display: inline-block;padding: 12px 20px;background: #ffd900;color: #000;text-decoration: none;border-radius: 25px;font-weight: bold;font-size: 1rem;transition: 0.3s;width: 100%;text-align: center;border: none;cursor: default; opacity:0.6;}
     footer{text-align: center; padding: 25px; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);}
    .rodape{color:#fff;}
    .rodape a{color:#25D366;font-weight:700;text-decoration:none;transition:0.3s;}
    .rodape a:hover{text-decoration:underline;text-shadow:0 0 10px #25D366;}
     @media(max-width: 768px){
-     .logo-text{font-size: 2.5rem; letter-spacing: 2px;}
-     .apple-icon{width: 35px; height: 35px;}
-     .frase-destaque{font-size: 1.3rem; padding: 0 15px;}
+    .logo-text{font-size: 2.5rem; letter-spacing: 2px;}
+    .apple-icon{width: 35px; height: 35px;}
+    .frase-destaque{font-size: 1.3rem; padding: 0 15px;}
     }
 </style>
 </head>
@@ -76,6 +72,7 @@
     <p class="frase-destaque">Seu próximo iPhone está aqui!</p>
 </header>
 <section class="produtos-section">
+    <div class="aviso-desativado">ℹ️ Site em modo demonstração - temporariamente sem botões de contato ativos</div>
     <div>
         <h2>🔥 Pronta Entrega</h2>
         <div class="grid-pronta" id="lista-pronta"><div class="loading">Carregando...</div></div>
@@ -86,13 +83,13 @@
         <div class="grid-encomenda" id="lista-encomenda"><div class="loading">Carregando...</div></div>
     </div>
 </section>
-<a href="https://wa.me/5551984254783" class="whats" target="_blank">💬</a>
+
 <footer>
     <div class="rodape">Desenvolvido por <a href="https://wa.me/5551985108885?text=Ol%C3%A1%20Edmilson%2C%20Vim%20pelo%20site%20do%20Imports%20Arthur%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank">Edmilson Bittencourt</a></div>
 </footer>
 <script>
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJNROg5_zMaA2tjMYW_8hr7K-ufdX3TVXQS_61nCkMAmr9-Ir01EyHOcX5m2h3haZL-XkotesF0Brj/pub?output=csv";
-const NUMERO_WHATS = "5551984254783";
+
 function converterLinkDrive(link) {
   if(!link) return "";
   link = link.replace(/"/g, '').trim();
@@ -135,7 +132,7 @@ function criarCard(produto) {
                 <p>${desc}</p>
                 <div class="preco">R$ ${preco}</div>
                 ${disponibilidade === 'Encomenda'? `<div class="sinal">Sinal 30%: R$ ${sinal}</div>` : ''}
-                <button class="btn-comprar" onclick="window.open('https://wa.me/${NUMERO_WHATS}?text=Olá! Tenho interesse no ${nome} por R$ ${preco}', '_blank')">Comprar no Whats</button>
+                <button class="btn-comprar" disabled>Comprar no Whats</button>
             </div>
         </div>
     `;
@@ -159,7 +156,6 @@ async function carregarProdutos() {
     } catch (erro) {
         containerPronta.innerHTML = '<p style="color:red;">Erro ao carregar CSV</p>';
         containerEncomenda.innerHTML = '<p style="color:red;">Erro ao carregar CSV</p>';
-        console.error(erro);
     }
 }
 carregarProdutos();
